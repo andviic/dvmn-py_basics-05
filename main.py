@@ -11,14 +11,16 @@ def main():
 
     persons_amount = 10
 
-    skills = ['Стремительный прыжок',
-              'Электрический выстрел',
-              'Ледяной удар',
-              'Стремительный удар',
-              'Кислотный взгляд',
-              'Тайный побег',
-              'Ледяной выстрел',
-              'Огненный заряд']
+    skills = [
+        'Стремительный прыжок',
+        'Электрический выстрел',
+        'Ледяной удар',
+        'Стремительный удар',
+        'Кислотный взгляд',
+        'Тайный побег',
+        'Ледяной выстрел',
+        'Огненный заряд'
+    ]
 
     fake = Faker('ru_RU')
 
@@ -31,18 +33,20 @@ def main():
                 runic_skill += letters[letter]
             runic_skills.append(runic_skill)
 
-        person = {'first_name': fake.first_name_male(),
-                  'last_name': fake.last_name_male(),
-                  'job': fake.job(),
-                  'town': fake.city(),
-                  'strength': randint(3, 18),
-                  'agility': randint(3, 18),
-                  'endurance': randint(3, 18),
-                  'intelligence': randint(3, 18),
-                  'luck': randint(3, 18),
-                  'skill_1': runic_skills[0],
-                  'skill_2': runic_skills[1],
-                  'skill_3': runic_skills[2]}
+        person = {
+            'first_name': fake.first_name_male(),
+            'last_name': fake.last_name_male(),
+            'job': fake.job(),
+            'town': fake.city(),
+            'strength': randint(3, 18),
+            'agility': randint(3, 18),
+            'endurance': randint(3, 18),
+            'intelligence': randint(3, 18),
+            'luck': randint(3, 18),
+            'skill_1': runic_skills[0],
+            'skill_2': runic_skills[1],
+            'skill_3': runic_skills[2]
+        }
 
         file_name = f"{person['first_name']} {person['last_name']}"
         file_path = f"output/svg/{slugify(file_name)}.svg"
