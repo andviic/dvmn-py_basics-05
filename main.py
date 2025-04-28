@@ -44,8 +44,8 @@ def main():
                   'skill_2': runic_skills[1],
                   'skill_3': runic_skills[2]}
 
-        file_name = f'{person['first_name']} {person['last_name']}'
-        file_path = f'output/svg/{slugify(file_name)}.svg'
+        file_name = f"{person['first_name']} {person['last_name']}"
+        file_path = f"output/svg/{slugify(file_name)}.svg"
 
         render_template('src/charsheet.svg', file_path, person)
 
